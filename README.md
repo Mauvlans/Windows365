@@ -25,6 +25,6 @@ Or manually: Intune → Devices → Configuration → Create → Windows 10+ →
 
 ### Caveats
 - Windows Firewall rules are port-based, not FQDN-based. "443 to anywhere" is the real security boundary; for FQDN allow-listing use Azure Firewall / SWG.
-- Hybrid-joined Cloud PCs need extra rules to DCs (88, 389, 445, 135, 49152-65535, 464, 636, 3268) — not included.
+- Hybrid-joined Cloud PCs: also deploy `W365-Firewall-HybridJoin-DCs.json` after replacing `REPLACE_WITH_DC_IPS` with your DC IPs (comma-separated). Allows 88, 464, 389, 636, 3268-3269, 445, 135, 49152-65535 to DCs only. Deploy it with `-PolicyPath`.
 - Other line-of-business apps on non-80/443 ports will break (by design). Pilot first.
 - Revert: unassign/delete the profile, or set `DefaultOutboundAction` = 0.

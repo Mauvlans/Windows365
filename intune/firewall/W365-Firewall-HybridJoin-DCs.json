@@ -1,0 +1,535 @@
+{
+  "@odata.type": "#microsoft.graph.windows10CustomConfiguration",
+  "displayName": "W365 - Firewall - Hybrid Join DC Allow",
+  "description": "Add-on for Entra hybrid joined Cloud PCs: outbound AD ports to domain controllers only. Replace REPLACE_WITH_DC_IPS. Source: github.com/Mauvlans/Windows365",
+  "omaSettings": [
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Name",
+      "value": "W365-Out-AD-Kerberos-TCP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-TCP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/RemotePortRanges",
+      "value": "88"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-TCP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-Kerberos-TCP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-TCP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Name",
+      "value": "W365-Out-AD-Kerberos-UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Protocol",
+      "value": 17
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-UDP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/RemotePortRanges",
+      "value": "88"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kerberos-UDP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-Kerberos-UDP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kerberos-UDP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Name",
+      "value": "W365-Out-AD-Kpasswd-TCP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/RemotePortRanges",
+      "value": "464"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-Kpasswd-TCP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-TCP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Name",
+      "value": "W365-Out-AD-Kpasswd-UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Protocol",
+      "value": 17
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/RemotePortRanges",
+      "value": "464"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-Kpasswd-UDP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-Kpasswd-UDP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-TCP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Name",
+      "value": "W365-Out-AD-LDAP-TCP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-TCP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-TCP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-TCP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-TCP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/RemotePortRanges",
+      "value": "389"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-TCP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-TCP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-LDAP-TCP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-TCP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-UDP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Name",
+      "value": "W365-Out-AD-LDAP-UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-UDP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-UDP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-UDP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Protocol",
+      "value": 17
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-UDP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/RemotePortRanges",
+      "value": "389"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAP-UDP - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAP-UDP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-LDAP-UDP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAP-UDP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAPS - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Name",
+      "value": "W365-Out-AD-LDAPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAPS - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAPS - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAPS - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAPS - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/RemotePortRanges",
+      "value": "636"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-LDAPS - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-LDAPS - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-LDAPS - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-LDAPS/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-GC - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Name",
+      "value": "W365-Out-AD-GC"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-GC - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-GC - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-GC - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-GC - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/RemotePortRanges",
+      "value": "3268-3269"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-GC - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-GC - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-GC - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-GC/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-SMB - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Name",
+      "value": "W365-Out-AD-SMB"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-SMB - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-SMB - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-SMB - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-SMB - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/RemotePortRanges",
+      "value": "445"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-SMB - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-SMB - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-SMB - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-SMB/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-EPM - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Name",
+      "value": "W365-Out-AD-RPC-EPM"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-EPM - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-EPM - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-EPM - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-EPM - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/RemotePortRanges",
+      "value": "135"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-EPM - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-EPM - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-RPC-EPM - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-EPM/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Name",
+      "value": "W365-Out-AD-RPC-Dynamic"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Action/Type",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Protocol",
+      "value": 6
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-Dynamic - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/RemotePortRanges",
+      "value": "49152-65535"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AD-RPC-Dynamic - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/RemoteAddressList",
+      "value": "REPLACE_WITH_DC_IPS"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Profiles",
+      "value": 7
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AD-RPC-Dynamic - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AD-RPC-Dynamic/Enabled",
+      "value": true
+    }
+  ]
+}
