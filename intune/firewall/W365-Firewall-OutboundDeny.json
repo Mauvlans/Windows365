@@ -1,0 +1,496 @@
+{
+  "@odata.type": "#microsoft.graph.windows10CustomConfiguration",
+  "displayName": "W365 - Firewall - Outbound Default Deny (80/443 + W365 required)",
+  "description": "Blocks all outbound except TCP 80/443 plus the minimum ports Windows 365 Cloud PCs require (DNS, AMQP 5671, KMS 1688, NTP 123, WireServer 32526, TURN 3478). Source: github.com/Mauvlans/Windows365",
+  "omaSettings": [
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "DomainProfile - EnableFirewall",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/DomainProfile/EnableFirewall",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "DomainProfile - DefaultOutboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DefaultOutboundAction",
+      "value": 1,
+      "description": "0=Allow,1=Block"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "DomainProfile - DefaultInboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/DomainProfile/DefaultInboundAction",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "PrivateProfile - EnableFirewall",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/EnableFirewall",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "PrivateProfile - DefaultOutboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DefaultOutboundAction",
+      "value": 1,
+      "description": "0=Allow,1=Block"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "PrivateProfile - DefaultInboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PrivateProfile/DefaultInboundAction",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "PublicProfile - EnableFirewall",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PublicProfile/EnableFirewall",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "PublicProfile - DefaultOutboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DefaultOutboundAction",
+      "value": 1,
+      "description": "0=Allow,1=Block"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "PublicProfile - DefaultInboundAction=Block",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/PublicProfile/DefaultInboundAction",
+      "value": 1
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Name",
+      "value": "W365-Out-HTTP",
+      "description": "Web + Azure WireServer/IMDS (168.63.129.16, 169.254.169.254)"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/RemotePortRanges",
+      "value": "80"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-HTTP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTPS - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Name",
+      "value": "W365-Out-HTTPS",
+      "description": "Web, RD Gateway/Broker, Intune, Entra, Windows 365 service, Office"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTPS - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTPS - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTPS - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-HTTPS - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/RemotePortRanges",
+      "value": "443"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-HTTPS - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-HTTPS - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-HTTPS/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-UDP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Name",
+      "value": "W365-Out-DNS-UDP",
+      "description": "DNS - required or nothing resolves"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-UDP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-UDP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-UDP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Protocol",
+      "value": 17,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-UDP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/RemotePortRanges",
+      "value": "53"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-UDP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-DNS-UDP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-UDP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-TCP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Name",
+      "value": "W365-Out-DNS-TCP",
+      "description": "DNS over TCP (large responses)"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-TCP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-TCP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-TCP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-DNS-TCP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/RemotePortRanges",
+      "value": "53"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-DNS-TCP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-DNS-TCP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-DNS-TCP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AMQP-IoTHub - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Name",
+      "value": "W365-Out-AMQP-IoTHub",
+      "description": "Windows 365 provisioning/health: *.azure-devices.net, global.azure-devices-provisioning.net"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AMQP-IoTHub - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AMQP-IoTHub - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AMQP-IoTHub - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-AMQP-IoTHub - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/RemotePortRanges",
+      "value": "5671"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-AMQP-IoTHub - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-AMQP-IoTHub - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-AMQP-IoTHub/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-KMS - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Name",
+      "value": "W365-Out-KMS",
+      "description": "Windows activation azkms/kms.core.windows.net"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-KMS - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-KMS - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-KMS - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-KMS - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/RemotePortRanges",
+      "value": "1688"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-KMS - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/RemoteAddressList",
+      "value": "20.118.99.224,40.83.235.53,23.102.135.246"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-KMS - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-KMS - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-KMS/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-NTP - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Name",
+      "value": "W365-Out-NTP",
+      "description": "time.windows.com - Kerberos/Entra token validity depends on clock"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-NTP - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-NTP - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-NTP - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Protocol",
+      "value": 17,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-NTP - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/RemotePortRanges",
+      "value": "123"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-NTP - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-NTP - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-NTP/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-WireServer-Agent - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Name",
+      "value": "W365-Out-WireServer-Agent",
+      "description": "Azure VM guest agent heartbeat"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-WireServer-Agent - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-WireServer-Agent - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-WireServer-Agent - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Protocol",
+      "value": 6,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-WireServer-Agent - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/RemotePortRanges",
+      "value": "32526"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-WireServer-Agent - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/RemoteAddressList",
+      "value": "168.63.129.16"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-WireServer-Agent - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-WireServer-Agent - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-WireServer-Agent/Enabled",
+      "value": true
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Name",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Name",
+      "value": "W365-Out-RDP-Shortpath-TURN",
+      "description": "RDP Shortpath (public networks) via TURN relay; falls back to TCP 443 if blocked"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Direction",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Direction",
+      "value": "OUT"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Action",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Action/Type",
+      "value": 1,
+      "description": "1=Allow"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Protocol",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Protocol",
+      "value": 17,
+      "description": "6=TCP,17=UDP"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - RemotePortRanges",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/RemotePortRanges",
+      "value": "3478"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingString",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - RemoteAddressList",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/RemoteAddressList",
+      "value": "51.5.0.0/16"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingInteger",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Profiles",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Profiles",
+      "value": 7,
+      "description": "Domain+Private+Public"
+    },
+    {
+      "@odata.type": "#microsoft.graph.omaSettingBoolean",
+      "displayName": "W365-Out-RDP-Shortpath-TURN - Enabled",
+      "omaUri": "./Vendor/MSFT/Firewall/MdmStore/FirewallRules/W365-Out-RDP-Shortpath-TURN/Enabled",
+      "value": true
+    }
+  ]
+}
