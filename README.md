@@ -28,3 +28,21 @@ Or manually: Intune → Devices → Configuration → Create → Windows 10+ →
 - Hybrid-joined Cloud PCs: also deploy `W365-Firewall-HybridJoin-DCs.json` after replacing `REPLACE_WITH_DC_IPS` with your DC IPs (comma-separated). Allows 88, 464, 389, 636, 3268-3269, 445, 135, 49152-65535 to DCs only. Deploy it with `-PolicyPath`.
 - Other line-of-business apps on non-80/443 ports will break (by design). Pilot first.
 - Revert: unassign/delete the profile, or set `DefaultOutboundAction` = 0.
+
+## intune/app-control — App Control for Business (WDAC)
+
+`Build-W365AppControlPolicy.ps1` builds a base policy on a Windows admin machine from Microsoft's built-in **AllowMicrosoft** example, then uploads it as an Intune custom profile (`./Vendor/MSFT/ApplicationControl/Policies/{GUID}/Policy`).
+
+What it allows:
+- Everything Microsoft-signed: Windows, M365 Apps, Teams, Edge, the Remote Desktop and Windows 365 components, Defender and the Intune agents
+- Apps installed by Intune, via the **managed installer** option (enable it in Intune → Endpoint security → App Control for Business → Managed installer)
+- Optionally, apps with a good Microsoft Intelligent Security Graph reputation (`-UseISG`)
+- Supplemental policies, so you can add per-app exceptions later
+
+Rollout:
+1. `./intune/app-control/Build-W365AppControlPolicy.ps1 -Upload -GroupId <pilot>` creates an **audit** build. Nothing is blocked; violations are only logged.
+2. Run `Get-W365AppControlAuditEvents.ps1` on the pilot Cloud PCs (by hand or as an Intune remediation) to see what *would* be blocked.
+3. Add a supplemental policy for any legitimate app that shows up.
+4. `-Enforce -Upload -GroupId <pilot>` creates a separate enforced profile. Unassign the audit profile, then widen the assignment.
+
+To revert: unassign the profile. Option 16 (update without reboot) is set, but a policy *removal* only fully clears after a reboot.
