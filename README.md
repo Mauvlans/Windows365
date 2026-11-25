@@ -46,3 +46,25 @@ Rollout:
 4. `-Enforce -Upload -GroupId <pilot>` creates a separate enforced profile. Unassign the audit profile, then widen the assignment.
 
 To revert: unassign the profile. Option 16 (update without reboot) is set, but a policy *removal* only fully clears after a reboot.
+
+## intune/scope-tags — Make Cloud PCs visible to scoped Intune admins
+
+Problem: newly provisioned Cloud PCs arrive in Intune with no scope tag, so admins who can only see certain scope tags can't see them.
+
+`New-W365CloudPCScopeTagGroup.ps1` fixes this in three steps:
+1. Creates (or reuses) the Entra dynamic device group **W365 - All Cloud PCs (Dynamic)** with the rule `(device.deviceModel -startsWith "Cloud PC")`. That matches every model string, including `Cloud PC Enterprise …`, Frontline and `Cloud PC for Agents`.
+2. Finds your Intune scope tag. Pass `-CreateScopeTag` to create it if it doesn't exist.
+3. Auto-assigns the scope tag to the group, which is the same as Tenant admin → Roles → Scope tags → Assignments. It merges with the tag's existing group assignments instead of replacing them.
+
+```powershell
+./intune/scope-tags/New-W365CloudPCScopeTagGroup.ps1 -ScopeTagName '<tag>' -WhatIf
+./intune/scope-tags/New-W365CloudPCScopeTagGroup.ps1 -ScopeTagName '<tag>'
+```
+Requirements:
+- Entra ID P1
+- An account with Group.ReadWrite.All and DeviceManagementRBAC.ReadWrite.All
+
+Things to know:
+- **Timing.** Dynamic group membership and tag propagation can take minutes to hours.
+- **Admin visibility.** The scoped admin's Intune role assignment must include this tag. If that role assignment's *Scope (Groups)* is limited to specific groups, add this group there too.
+- **Revert.** Remove the group from the scope tag's Assignments, then delete the group.
